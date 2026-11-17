@@ -1,4 +1,4 @@
-# Analyse des ventes d’une PME — préparation Simplon Dev IA
+# Analyse des ventes d’une PME — SQL et Python
 
 Projet pédagogique construit à partir du [modèle fourni par Simplon](https://github.com/paufabregat/projet-devia-data-analyst-simplon). Il calcule les ventes avec SQL et Python puis génère des graphiques Plotly.
 
