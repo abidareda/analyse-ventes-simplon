@@ -1,59 +1,38 @@
-# Qu'est-ce que c'est ?
+# Analyse des ventes d’une PME — préparation Simplon Dev IA
 
-Ceci est un projet de visualisation de données, qui utilise le langage de programmation Pyhton.
-Il utilise deux outils : [pandas](https://pandas.pydata.org/about/) et [plotly](https://plotly.com/python/).
+Projet pédagogique construit à partir du [modèle fourni par Simplon](https://github.com/paufabregat/projet-devia-data-analyst-simplon). Il calcule les ventes avec SQL et Python puis génère des graphiques Plotly.
 
-- Pandas va nous permettre de télécharger un fichier de données CSV depuis une URL.
-- Plotly va nous permettre de générer des graphiques puis de les exporter en page web (au format HTML).
+## Démarrage
 
-# Démarrer le projet dans GitHub Codespaces
-* Cliquez sur "Utiliser ce modèle" ("Use this template") en haut à droite de la page, puis sur "Créer un nouveau dépôt". [Voici les étapes pour créer un dépôt](https://docs.github.com/fr/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template). Si vous n'avez pas de compte GitHub, il vous sera demandé d'en créer un avant de pouvoir créer le dépôt.
-* Une fois dans votre dépôt, ouvrez le site dans un Codespace en cliquant sur Code > Codespaces, puis créez un nouveau Codespace sur votre branche principale.
+Dans un terminal ouvert dans le dossier du projet :
 
-<img alt="Créer un Codespace" src="https://github.com/user-attachments/assets/cb29a8da-d1ac-42f5-962c-7d43b8011324" width="400px"/><br/>
+```bash
+python3 -m pip install -r requirements.txt
+python3 app.py
+```
 
-## Attendez que l’environnement de travail sur Codespace soit prêt
+Versions utilisées pour la vérification : pandas 2.2.3 et Plotly 7.1.0. Les résultats sont générés dans `resultats/`. Le fichier CSV local est utilisé au lieu de la source distante du modèle afin de travailler sur l’extrait fourni, même sans accès à Google Sheets.
 
-L'environnement de travail Codespace va se construire automatiquement au premier lancement. Cela peut prendre plusieurs minutes.
+Télécharger puis ouvrir les fichiers HTML dans un navigateur pour consulter les graphiques. GitHub affiche habituellement le code HTML, pas le graphique interactif directement. Dans le Codespace du modèle, utiliser la prévisualisation prévue par son environnement.
 
-L’environnement est prêt lorsque vous voyez apparaître en bas de la page les boutons suivants :
+## Fichiers
 
-    💬 MESSAGE DE BIENVENUE
+| Fichier | Rôle |
+|---|---|
+| `ventes.csv` | Données originales, inchangées |
+| `requetes.sql` | Requêtes à exécuter sur la table `ventes` |
+| `app.py` | Contrôles, agrégations et graphiques |
+| `requirements.txt` | Dépendances Python |
+| `SYNTHESE.md` | Résultats, interprétations et limites |
+| `GUIDE.md` | Explications et étapes à réaliser personnellement |
+| `resultats/` | Graphiques HTML et tableaux de résultats CSV |
 
-    💻 TERMINAL
+## Résultats de référence
 
-    🔎 SPLIT
+39 lignes ; 3 380 unités vendues ; chiffre d’affaires total de 44 825 unités monétaires. Aucune devise n’est spécifiée dans les données. Les agrégations par produit et région ont été comparées entre SQLite et pandas avec succès.
 
-    🏠 PREVIEW
+## État de réalisation
 
-➡️ Ne touchez à rien pendant le chargement.
+Le programme et les requêtes ont été vérifiés localement. L’import dans SQLiteOnline et l’export via son menu restent à réaliser par le candidat. La publication sur son dépôt GitHub et l’envoi du lien sont également à effectuer.
 
-# Le projet
-## Comment ça marche ?
-
-* `README.md`: Il s'agit de ce fichier, que vous lisez en ce moment même.
-
-* `app.py`: ceci est un fichier python, le coeur du projet.
-
-Pour executer le fichier Python et ainsi générer un graphique sous forme de page web, cliquez sur le bouton "💻 TERMINAL" depuis la barre d'outils en bas de page.
-
-Puis écrivez la commande suivante : `python3 app.py`.
-
-Cette commande se divise en deux partie : 
-- d'abord "python3" qui indique que l'on souhaite utiliser Python, et plus précisemment, la version 3.
-- Puis "app.py" qui indique que l'on souhaite exécuter le programme python contenu dans le fichier "app.py" (avec Python3 donc).
-
-Appuyez sur la touche `Entrée` de votre clavier, après quelques secondes d'exécution, vous devriez obtenir un message de succès.
-
-## Observer son résultat
-
-Cliquez sur le bouton "🏠 PREVIEW" depuis la barre d'outils en bas de page.
-Depuis la nouvelle fenêtre de votre navigateur qui vient de s'ouvrir, sélectionner le fichier "ventes-par-region.html".
-
-Vous venez d'ouvrir le graphique en version web généré par le fichier "app.py" exécuté avec Python3 !
-
-Prenez le temps de lire, d'analyser voir même de bidouiller le fichier "app.py" puis lancez-vous dans les consignes du projet pour la sélection Simplon !
-
-# Publier vos modifications sur votre propre dépôt GitHub
-Une fois que vous avez terminé de travailler sur les consignes du projet et que vous souhaitez publier vos modifications dans votre dépôt, vous devrez suivre les étapes décrites dans la section « Validation (commit) de vos modifications » de [cette ressource](https://docs.github.com/fr/codespaces/developing-in-a-codespace/using-source-control-in-your-codespace#validation-commit-de-vos-modifications
-).
+Ce dossier est une base accompagnée préparée avec une assistance IA. Le candidat doit comprendre, exécuter et adapter les éléments avant de les présenter ; les consignes de Simplon demandent un travail personnel. Ne pas présenter les étapes non réalisées comme acquises.
